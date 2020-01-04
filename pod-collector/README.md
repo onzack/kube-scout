@@ -12,5 +12,5 @@ For the moment, the pod collector is kept as simple as possible with just a few 
 sudo docker run -tid --name pod-collector \
   -e MONGODB_HOST="localhost" \
   -e MONGODB_PORT="27017" \
-  kuber-scout-pod-collector:v0.0.1
+  kube-scout-pod-collector:v0.0.1
 ```
