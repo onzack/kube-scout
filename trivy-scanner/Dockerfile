@@ -6,22 +6,24 @@ RUN echo "BUILD INFO: Update base image" && \
     apt-get upgrade -y && \
     echo "BUILD INFO: Install needed packages" && \
     apt-get install -y --no-install-recommends tzdata curl ca-certificates jq bc mongo-tools docker.io && \
+    usermod -a -G docker kube-scout && \
     echo "BUILD INFO: Install aquasecurity/trivy" && \
     export VERSION=$(curl --silent "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/') && \
     echo $VERSION && \
-    wget https://github.com/aquasecurity/trivy/releases/download/v${VERSION}/trivy_${VERSION}_Linux-64bit.tar.gz && \
-    tar zxvf trivy_${VERSION}_Linux-64bit.tar.gz && \
+    curl -o /opt/trivy_${VERSION}_Linux-64bit.tar.gz -LO https://github.com/aquasecurity/trivy/releases/download/v${VERSION}/trivy_${VERSION}_Linux-64bit.tar.gz && \
+    tar zxvf /opt/trivy_${VERSION}_Linux-64bit.tar.gz --directory /opt && \
+    rm /opt/trivy_${VERSION}_Linux-64bit.tar.gz && \
+    chmod -R +x /opt/trivy && \
     echo "BUILD INFO: Remove obsolete packages" && \
-    apt-get purge -y curl gnupg gnupg2 gnupg1 apt-transport-https && \
+    apt-get purge -y curl && \
     apt-get -y autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-COPY --chown=kube-scout:kube-scout pod-collector.bash /opt/pod-collector.bash
-RUN chmod u+x /opt/pod-collector.bash
-USER kube-scout
+COPY --chown=kube-scout:kube-scout trivy-scanner.bash /opt/trivy-scanner.bash
+RUN chmod u+x /opt/trivy-scanner.bash
+#USER kube-scout
 WORKDIR /home/kube-scout
-ENTRYPOINT ["/opt/pod-collector.bash"]
-
+ENTRYPOINT ["/opt/trivy-scanner.bash"]
 
 #   Copyright 2020 dmlabs.ch
 #
