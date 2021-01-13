@@ -8,6 +8,9 @@ The idea is to save that json output in a MongoDB, visualize it with a custom we
 
 This project is new, more and detailed information will follow in the future.
 
+# Update
+This project is paused in favor of this project: [onzack/rkm](https://github.com/onzack/rkm)
+
 # Licence
 Copyright 2021 ONZACK AG
 
