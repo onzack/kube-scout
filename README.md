@@ -4,7 +4,7 @@ Tools for scanning like aquasecurity/kube-hunter or aquasecurity/trivy are alrea
 The idea is to save that json output in a MongoDB, visualize it with a custom web application and add information like comments.
 
 # Idea
-![A Sample Graph for visualization ](https://github.com/onzack/kube-scout/blob/master/kube-scout.png)
+![A Sample Graph for visualization ](https://github.com/onzack/kube-scout/blob/main/kube-scout.png)
 
 This project is new, more and detailed information will follow in the future.
 
