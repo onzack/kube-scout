@@ -1,9 +1,9 @@
 import assert from "assert";
 
-describe("kube-scout-webapp", function () {
+describe("simple-test", function () {
   it("package.json has correct name", async function () {
     const { name } = await import("../package.json");
-    assert.strictEqual(name, "kube-scout-webapp");
+    assert.strictEqual(name, "simple-test");
   });
 
   if (Meteor.isClient) {

@@ -1,6 +1,3 @@
-import { Meteor } from 'meteor/meteor';
-import '../imports/api/tasks.js';
+// Server entry point, imports all server code
 
-Meteor.startup(() => {
-  // code to run on server at startup
-});
+import '/imports/startup/server';
