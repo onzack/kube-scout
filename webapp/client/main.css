@@ -43,6 +43,14 @@ h1 {
   display: inline-block;
   margin-right: 1em;
 }
+
+h2 {
+  font-size: 1.2em;
+  margin: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 1em;
+}
  
 form {
   margin-top: 10px;
