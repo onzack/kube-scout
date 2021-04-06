@@ -2,12 +2,10 @@
   <div id="app">
     <div class="wrapper">
       <div class="topMenu">
-        <app-nav />
+        <TopMenu />
       </div>
       <div class="leftMenu">
-        <router-link :to="{ name: 'Todo' }" exact>Todo</router-link><br/>
-        <router-link :to="{ name: 'About' }">About</router-link><br/>
-        <router-link :to="{ name: 'Hobbies' }">Hobbies</router-link><br/>
+        <LeftMenu />
       </div>
       <div class="mainContent">
         <main>
@@ -19,11 +17,13 @@
 </template>
  
 <script>
-import AppNav from './components/navigation/TopMenu.vue'
+import TopMenu from './components/navigation/TopMenu.vue'
+import LeftMenu from './components/navigation/LeftMenu.vue'
 
 export default {
   components: {
-    AppNav,
+    TopMenu,
+    LeftMenu
   }
 }
 </script>
