@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Tasks } from '../tasks.js'
+import { Tasks } from '/imports/db/tasks.js'
 
 Meteor.publish('tasks', function tasksPublication() {
     return Tasks.find({

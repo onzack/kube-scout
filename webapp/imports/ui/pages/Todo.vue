@@ -37,9 +37,8 @@
  
 <script>
 import { Meteor } from "meteor/meteor";
-import Vue from "vue";
 import Task from "../components/todo/Task.vue";
-import { Tasks } from "../../api/tasks/tasks.js";
+import { Tasks } from "/imports/db/tasks.js";
  
 export default {
   components: {

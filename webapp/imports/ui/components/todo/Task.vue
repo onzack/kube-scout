@@ -24,7 +24,7 @@
 </template>
  
 <script>
-import { Tasks } from "../../../api/tasks/tasks.js";
+import { Tasks } from "/imports/db/tasks.js";
 import classnames from "classnames";
 
 export default {
