@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <div class="wrapper">
-      <div class="topMenu">
-        <TopMenu />
+    <div class="header">
+      <Header />
+    </div>
+    <div class="row">
+      <div class="leftColumn">
+        <Menu />
       </div>
-      <div class="leftMenu">
-        <LeftMenu />
-      </div>
-      <div class="mainContent">
+      <div class="mainColumn">
         <main>
           <router-view />
         </main>
@@ -17,35 +17,44 @@
 </template>
  
 <script>
-import TopMenu from './components/navigation/TopMenu.vue'
-import LeftMenu from './components/navigation/LeftMenu.vue'
+import Header from './components/navigation/Header.vue'
+import Menu from './components/navigation/Menu.vue'
 
 export default {
   components: {
-    TopMenu,
-    LeftMenu
+    Header,
+    Menu
   }
 }
 </script>
 
 <style>
-.wrapper {
+.header {
+  background-color: #1D273B;
+  z-index: 2;
+  padding: 0px 32px;
+
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-gap: 5 px;
-  grid-auto-rows: minmax(100px, auto);
+  align-items: center;
+  grid-template-columns: 200px auto;
+
+  height: 88px;
+
 }
-.topMenu {
-  grid-column: 1 / 9;
-  grid-row: 1 ;
+
+.row {
+  display: flex;
 }
-.leftMenu {
-  grid-column: 1;
-  grid-row: 2 / 9;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+
+.column {
+  flex: 50%;
 }
-.mainContent {
-  grid-column: 2 / 9;
-  grid-row: 2 / 9;
+
+.mainColumn {
+  margin: 32px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
 }
 </style>
