@@ -11,9 +11,12 @@
 </template>
 
 <script>
-export default {
-}
+  export default {
+  }
 </script>
 
 <style>
+.not-found-image {
+  width: 50%;
+}
 </style>

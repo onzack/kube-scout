@@ -14,13 +14,10 @@
   background-color: #1D273B;
   z-index: 2;
   padding: 0px 32px;
-
   display: grid;
   align-items: center;
   grid-template-columns: 200px auto;
-
   height: 88px;
-
 }
 
 .logo {
@@ -41,12 +38,10 @@
 /*
 .userMenu {
   padding: 8px;
-
   display: grid;
   grid-template-columns: 1fr;
   justify-items: stretch;
   color: #C0C4CC;
-
   float: right;
   width: 300px;
 }
